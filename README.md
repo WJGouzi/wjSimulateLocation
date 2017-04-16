@@ -12,8 +12,12 @@
 
 从[高德地图]([http://lbs.amap.com/console/show/picker](http://lbs.amap.com/console/show/picker))搜索相关的位置。
 
-把工程中的gpx文件的schema进行设置
+把工程中的gpx文件的scheme进行设置
 
 Product->Scheme->Edit Scheme->Options->Default Location ，选择刚才创建的GPX File，allow location simulation需要打上勾。
 
 真机或模拟器运行都可以的。
+
+* 此方法能够修改掉微信或者是QQ等软件的定位。
+* 这方法不能进行长时间的修改手机定位。
+* 这只能在调试的时候进行修改，如果断掉，直接进行使用，不能修改手机定位。
