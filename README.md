@@ -11,7 +11,7 @@
 * (3)BD-09：百度定位的坐标系（百度地图偏移多一次）;
 * (4)如果直接用国内的坐标放到iOS地图上，会出现偏差，所以获取到坐标点后需要进行坐标的转换处理。
 
-从[高德地图]([http://lbs.amap.com/console/show/picker](http://lbs.amap.com/console/show/picker))搜索相关的位置。
+从[高德地图](http://lbs.amap.com/console/show/picker)搜索相关的位置。
 
 把工程中的gpx文件的scheme进行设置
 

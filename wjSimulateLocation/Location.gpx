@@ -7,8 +7,10 @@
      Xcode will simulate a route visiting each waypoint.
      -->
     
-    <wpt lat="23.702863" lon="117.200863">
-        <name>桥东中学</name>
+    <wpt lat="39.023324" lon="125.761558">
+        <name>平壤</name>
+        
+<!--        125.767166,39.02443 -->
 
 <!--    <wpt lat="23.134897" lon="113.317131">-->
 <!--        <name>肯德基</name>-->

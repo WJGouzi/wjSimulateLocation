@@ -17,10 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//117.200863,23.702863
-    wjLocationTransform *gdLocation = [[wjLocationTransform alloc]initWithLatitude:23.702863 andLongitude:117.200863];
+    wjLocationTransform *gdLocation = [[wjLocationTransform alloc]initWithLatitude:39.02443 andLongitude:125.767166];
     wjLocationTransform *iosLocation = [gdLocation transformFromGDToGPS];
-    NSLog(@"转化后肯德基iOS坐标:%f, %f", iosLocation.latitude, iosLocation.longitude);
+    NSLog(@"转化后iOS坐标传入到gpx文件中:%f, %f", iosLocation.latitude, iosLocation.longitude);
 }
 
 

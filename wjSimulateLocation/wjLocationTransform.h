@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface wjLocationTransform : NSObject
+
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, assign) double longitude;
 
+// 构造法
 - (id)initWithLatitude:(double)latitude andLongitude:(double)longitude;
 
 /*

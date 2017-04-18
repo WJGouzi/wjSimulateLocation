@@ -51,8 +51,10 @@ static const double xPi = M_PI  * 3000.0 / 180.0;
     return [[wjLocationTransform alloc] initWithLatitude:end_coor.latitude andLongitude:end_coor.longitude];
 }
 
+// 国际标准 -> 中国坐标偏移标准
 + (CLLocationCoordinate2D)transformFromWGSToGCJ:(CLLocationCoordinate2D)wgsLoc {
     CLLocationCoordinate2D adjustLoc;
+    // 判断是国内
     if([self isLocationOutOfChina:wgsLoc]) {
         adjustLoc = wgsLoc;
     }
@@ -88,6 +90,7 @@ static const double xPi = M_PI  * 3000.0 / 180.0;
     return lon;
 }
 
+// 中国坐标偏移标准 -> 百度坐标偏移标准
 + (CLLocationCoordinate2D)transformFromGCJToBaidu:(CLLocationCoordinate2D)p {
     long double z = sqrt(p.longitude * p.longitude + p.latitude * p.latitude) + 0.00002 * sqrt(p.latitude * pi);
     long double theta = atan2(p.latitude, p.longitude) + 0.000003 * cos(p.longitude * pi);
@@ -97,6 +100,7 @@ static const double xPi = M_PI  * 3000.0 / 180.0;
     return geoPoint;
 }
 
+// 百度坐标偏移标准 -> 中国坐标偏移标准
 + (CLLocationCoordinate2D)transformFromBaiduToGCJ:(CLLocationCoordinate2D)p {
     double x = p.longitude - 0.0065, y = p.latitude - 0.006;
     double z = sqrt(x * x + y * y) - 0.00002 * sin(y * xPi);
@@ -107,6 +111,7 @@ static const double xPi = M_PI  * 3000.0 / 180.0;
     return geoPoint;
 }
 
+// 中国坐标偏移标准 -> 国际标准
 + (CLLocationCoordinate2D)transformFromGCJToWGS:(CLLocationCoordinate2D)p {
     double threshold = 0.00001;
     
